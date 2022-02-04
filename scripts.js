@@ -1,15 +1,26 @@
-// $("body").append("<h1>This is a H1 inserted by JavaScript.</h1>");
+let i = 0;
 
 $("#addButton").on("click", function () {
-    $("ul").append("<li>" + $("#textToDo").val() + "</li>");
-    console.log("One item added to the To Do list.");
+    $("ul").append('<li id=listItem"' + i + '">' + $('#textToDo').val() + '</li>');
+    console.log("One item added to the To Do list. Index of list item: " + i);
+    i = i + 1;
 })
 
-$("ul").append("<li>" + "Added by JavaScript" + "</li>");
+// $("ul").append('<li>' + 'Added by JavaScript' + '</li>');
 
+$("h1").on("click", function () {
+    console.log($('ul').find('li').text());
+})
+
+/*
 $("ul").on("click", function () {
-    console.log("An item can be marked as done by clicking on it");
-})
+    console.log("You clicked on: " + $('li').text());
+})  
+*/
+
+$('ul').find('li').on('click', function () {
+    console.log('LI clicked.');
+});
 
 /* $("h1").on("click", function () {
     console.log("Click H1");
