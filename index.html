@@ -7,15 +7,18 @@
     <title>Simple To Do List</title>
 </head>
 <body>
-    <h1>My simple To Do List</h1>
-    <h2>To do's:</h2>
-    <ul></ul>
-    <p>
-        <input type="text" id="textToDo">
-        <button id="addButton">Add to list</button>
-    </p>
-    <p>To mark an item as done simply click on it!</p>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="./scripts.js"></script>
+    <div class="continer">
+        <h1>My TO DO List</h1>
+        <p id="addingParagraph">
+            <input type="text" id="textToDo">
+            <button id="addButton">Add to list</button>
+        </p>
+        <div class="theList">
+            <!-- List elements will be added here by JavaScript-->
+        </div>
+        <ul></ul>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="./scripts.js"></script>
+    </div>
 </body>
 </html>

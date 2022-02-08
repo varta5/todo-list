@@ -1,28 +1,15 @@
 let i = 0;
 
+function itemDone(itemIndex) {
+    $('#listItem' + itemIndex).on('click', function () {
+        $('#listItem' + itemIndex).css('text-decoration', 'line-through');
+        console.log('ToDo list item number ' + itemIndex + ', (' + $('#listItem' + itemIndex).text() + ') has been marked as completed.');
+    });
+}
+
 $("#addButton").on("click", function () {
-    $("ul").append('<li id=listItem"' + i + '">' + $('#textToDo').val() + '</li>');
+    $("ul").append('<li id=listItem' + i + '>' + $('#textToDo').val() + '</li>');
     console.log("One item added to the To Do list. Index of list item: " + i);
+    itemDone(i);
     i = i + 1;
 })
-
-// $("ul").append('<li>' + 'Added by JavaScript' + '</li>');
-
-$("h1").on("click", function () {
-    console.log($('ul').find('li').text());
-})
-
-/*
-$("ul").on("click", function () {
-    console.log("You clicked on: " + $('li').text());
-})  
-*/
-
-$('ul').find('li').on('click', function () {
-    console.log('LI clicked.');
-});
-
-/* $("h1").on("click", function () {
-    console.log("Click H1");
-})
-*/
